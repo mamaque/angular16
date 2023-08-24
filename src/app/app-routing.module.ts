@@ -4,6 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { AddContactComponent } from './add-contact/add-contact.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   {path:"home", component:HomeComponent},
@@ -16,7 +17,8 @@ const routes: Routes = [
       {path:"edit/:id", component:AddContactComponent},
     ]
   },
-  {path:"access", loadChildren:()=>import('./access/access.module').then(opt=>opt.AccessModule)}
+  {path:"access", loadChildren:()=>import('./access/access.module').then(opt=>opt.AccessModule)},
+  {path:"login", component:LoginComponent}
 ];
 
 @NgModule({
