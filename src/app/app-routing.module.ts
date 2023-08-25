@@ -18,7 +18,7 @@ const routes: Routes = [
     ]
   },
   {path:"access", loadChildren:()=>import('./access/access.module').then(opt=>opt.AccessModule)},
-  {path:"login", component:LoginComponent}
+  {path:"login", loadComponent:()=>import('./login/login.component').then(opt=>opt.LoginComponent)}
 ];
 
 @NgModule({

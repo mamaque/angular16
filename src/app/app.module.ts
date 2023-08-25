@@ -7,7 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { StatusComponent } from './status/status.component';
-import { LoginComponent } from './login/login.component';
+//import { LoginComponent } from './login/login.component';
 import { AddContactComponent } from './add-contact/add-contact.component';
 // import { AccessRoutingModule } from './access/access-routing.module';
 
@@ -23,7 +23,7 @@ import { AddContactComponent } from './add-contact/add-contact.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    LoginComponent,
+    //LoginComponent,
     //AccessRoutingModule
   ],
   providers: [],
