@@ -9,6 +9,7 @@ import { ContactComponent } from './contact/contact.component';
 import { StatusComponent } from './status/status.component';
 //import { LoginComponent } from './login/login.component';
 import { AddContactComponent } from './add-contact/add-contact.component';
+import { C404Component } from './c404/c404.component';
 // import { AccessRoutingModule } from './access/access-routing.module';
 
 @NgModule({
@@ -18,7 +19,8 @@ import { AddContactComponent } from './add-contact/add-contact.component';
     AboutComponent,
     ContactComponent,
     StatusComponent,
-    AddContactComponent
+    AddContactComponent,
+    C404Component
   ],
   imports: [
     BrowserModule,

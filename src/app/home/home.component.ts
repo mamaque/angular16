@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  headerName = "Angular Application";
+  subscription = 250;
+  discount = 0.15;
+
   constructor() { }
 
   ngOnInit(): void {
