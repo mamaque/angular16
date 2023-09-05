@@ -1,4 +1,33 @@
 
 <h2>{{headerName | uppercase}}</h2>
+<input [(ngModel)]="headerName">
+
+
 <h3>The subscription is {{subscription | currency:'EUR'}} per month</h3>
-<h3>with a discount of {{discount | percent}}</h3>
+<h3 [style.color]=colorDiscount> with a discount of {{discount | percent}}</h3>
+
+<br>
+<button style="height:20px;width:100px" (click)="functionDisplay('My message')">Click Me</button>
+&nbsp;&nbsp;
+<input [value]= isDisabled [disabled]= isDisabled #thisId (change)="functionDisplay(thisId.value)">
+
+<h2 [ngClass]="headClassName">This is a text with ngClass</h2>
+
+<h2 [ngStyle]="headStyleValue">This is a text with ngStyle</h2>
+
+
+<br>
+<button style="height:20px;width:100px" (click)="toggleCondition()">Toggle</button> 
+&nbsp;&nbsp; 
+Value of condition : &nbsp; <span style="color: darkblue;">{{condition}}</span> 
+<p *ngIf="condition">Displayed if <span style="color:darkgreen">condition is true</span> </p>
+<p *ngIf="!condition">Displayed if <span style="color:darkred">condition is false</span> </p>
+
+
+
+<h2 *ngIf="discount>0.1">Discount is more than 10%</h2>
+<div *ngIf="condition">
+   <ul>
+      <li *ngFor="let user of users; let i = index"> {{user.name}} {{user.lastName}} : {{i}}</li>
+   </ul>
+</div>

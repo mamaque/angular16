@@ -10,7 +10,7 @@ import { C404Component } from './c404/c404.component';
 const routes: Routes = [
   {path:"home", component:HomeComponent},
   {path:"about", component:AboutComponent},
-  {path:"**", component:C404Component},
+
   {
     path:"contact", 
     component:ContactComponent,
@@ -20,7 +20,8 @@ const routes: Routes = [
     ]
   },
   {path:"access", loadChildren:()=>import('./access/access.module').then(opt=>opt.AccessModule)},
-  {path:"login", loadComponent:()=>import('./login/login.component').then(opt=>opt.LoginComponent)}
+  {path:"login", loadComponent:()=>import('./login/login.component').then(opt=>opt.LoginComponent)},
+  {path:"**", component:C404Component},
 ];
 
 @NgModule({

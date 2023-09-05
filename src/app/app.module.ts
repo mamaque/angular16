@@ -10,6 +10,7 @@ import { StatusComponent } from './status/status.component';
 //import { LoginComponent } from './login/login.component';
 import { AddContactComponent } from './add-contact/add-contact.component';
 import { C404Component } from './c404/c404.component';
+import { FormsModule } from '@angular/forms';
 // import { AccessRoutingModule } from './access/access-routing.module';
 
 @NgModule({
@@ -25,6 +26,7 @@ import { C404Component } from './c404/c404.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     //LoginComponent,
     //AccessRoutingModule
   ],

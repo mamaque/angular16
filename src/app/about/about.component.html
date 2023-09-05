@@ -1,1 +1,92 @@
 <p>about works!</p>
+<h2> avec TrackBy</h2>
+<table>
+   <thead>
+     <tr>
+       <th>ID</th>
+       <th>Name</th>
+     </tr>
+   </thead>
+   <tbody>
+     <tr *ngFor="let item of store "> <!-- ; trackBy: trackByFunction-->
+       <td>{{ item.id }}</td>
+       <td>{{ item.name }}</td>
+     </tr>
+   </tbody>
+ </table>
+
+<br>
+
+ <button (click)="getNewData()">More Items</button>&nbsp;&nbsp;
+ <button (click)="changeSecond()">Change Second Name</button>&nbsp;&nbsp;
+ <button (click)="suppress3()">Remove third</button>&nbsp;&nbsp;
+ <button (click)="getAlmostSameData()">getAlmostSame</button>&nbsp;&nbsp;
+ <button (click)="changeId()">change id</button>&nbsp;&nbsp;
+ <button (click)="addItem()">add user</button>
+ <br><br><br>
+ <div>
+   Select your favorite god &nbsp;&nbsp;
+   <label for="gods"><input type="checkbox" checked (change)="showGoddess = !showGoddess">
+      show goddesses
+   </label>
+
+</div>
+ <br><br>
+ <select id="gods" (change)="assignSelectedGod"> <!--  [(ngModel)]="selectedGod" -->
+   <ng-container *ngFor="let g of gods">
+     <ng-container *ngIf="showGoddess || g.gender !== 'goddess'">
+       <option> {{g.name}} ({{g.gender}}) </option>
+     </ng-container>
+   </ng-container>
+ </select>
+ <br>
+ Valeur : {{selectValue}}
+
+ <br><br>
+
+ <select [(ngModel)]="selectedNumber"(change)="onChange($event)" >  
+   <option value="0">&Pi;</option>
+   <option value="1">&#632;</option>
+   <option value="2">e</option>
+   <option value="3">&#8730;2</option>
+   <option value="11">&euro;</option>
+   <option value="12">&#8381;</option>
+   <option value="13">&#8709;;</option>
+   <option value="14">&infin;</option>
+</select><br><br>
+
+Selected option
+<label>{{selectedNumber}}</label>
+
+ 
+<div [ngSwitch]="selectedNumber">
+   <p *ngSwitchCase="0">&Pi; = 3.14159</p>
+   <p *ngSwitchCase="1">Le nombre d'or = 1.61803 </p>
+   <p *ngSwitchCase="2">Le nombre e = 2.71828...</p>
+   <p *ngSwitchCase="3">La racine de 2 = 1.41421</p>
+   <p *ngSwitchDefault>Ce n'est pas un nombre</p>
+</div>
+
+<h1> ngClass with a method </h1>
+
+<p>currentClasses are {{currentClasses | json}}</p>
+<div [ngClass]="currentClasses">Text to display.</div>
+<ul>
+  <li>
+    <label for="class1">Classe 1</label>
+    <input type="checkbox" [(ngModel)]="class1var" id="class1">
+    <label style="color:gray" for="class1">&nbsp;&nbsp;&nbsp;color: limegreen</label>
+  </li>
+  <li>
+   <label for="class2">Classe 2</label>
+   <input type="checkbox" [(ngModel)]="class2var" id="class2">
+   <label style="color:gray" for="class2">&nbsp;&nbsp;&nbsp;font-family: "Brush Script MT" &nbsp; font-size: 2rem</label>
+ </li>
+ <li>
+   <label for="class3">Classe 3</label>
+   <input type="checkbox" [(ngModel)]="class3var" id="class3">
+   <label style="color:gray" for="class3">&nbsp;&nbsp;&nbsp;background-color: yellow</label>
+ </li>
+</ul>
+<button type="button" (click)="setCurrentClasses()">Refresh currentClasses</button>
+
