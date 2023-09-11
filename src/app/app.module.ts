@@ -11,6 +11,8 @@ import { StatusComponent } from './status/status.component';
 import { AddContactComponent } from './add-contact/add-contact.component';
 import { C404Component } from './c404/c404.component';
 import { FormsModule } from '@angular/forms';
+import { HighlightDirective } from './highlight.directive';
+import { UnlessDirective } from './unless.directive';
 // import { AccessRoutingModule } from './access/access-routing.module';
 
 @NgModule({
@@ -21,7 +23,9 @@ import { FormsModule } from '@angular/forms';
     ContactComponent,
     StatusComponent,
     AddContactComponent,
-    C404Component
+    C404Component,
+    HighlightDirective,
+    UnlessDirective
   ],
   imports: [
     BrowserModule,

@@ -90,3 +90,57 @@ Selected option
 </ul>
 <button type="button" (click)="setCurrentClasses()">Refresh currentClasses</button>
 
+<p appHighlight>No colour defined!</p>
+
+<p [appHighlight]="myColor">Only main colour defined to LightCoral</p>
+
+<p [appHighlight]="myColor" secondaryColor = "lightgreen">appHighLight is LightCoral through a variable, secondary is LightGreen</p>
+
+<p [appHighlight]="'yellow'" secondaryColor = "lightgreen">appHighLight is yellow, directly set, , secondary is LightGreen</p>
+
+<p [appHighlight]= "''" secondaryColor = "lightgreen">appHighlight colour is empty, secondary colour is LightGreen</p>
+
+<p appHighlight secondaryColor = "orange">no appHighlight colour defined, secondary colour is orange</p>
+
+<p>Expression évaluée: {{ 1 + 1 }}</p>
+<p ngNonBindable>Expression non évaluée:  {{ 1 + 1 }}</p>
+
+<h3>ngNonBindable with a directive</h3>
+<div ngNonBindable [appHighlight]="'yellow'">This should not evaluate: {{ 1 +1 }}, but will highlight yellow.
+</div>
+
+<br><br>
+
+<div ngNonBindable [appHighlight]="'pink'">
+  <div>Expression interne{{ 1 +1 }}, but will highlight.</div>
+</div>
+
+<p *appUnless="condition" class="classA">
+  (A) This paragraph is displayed because the condition is false.
+</p>
+
+<p *appUnless="!condition" class="classB">
+  (B) Although the condition is true,
+  this paragraph is displayed because appUnless is set to false.
+</p>
+
+
+<p>
+  The condition is currently
+  <span [ngClass]="{ 'classA': !condition, 'classB': condition }">{{condition}}</span>.
+
+  <button
+          type="button"
+          (click)="condition = !condition"
+          [ngClass]="{ 'classA': condition, 'classB': !condition }">
+          Toggle condition to {{condition ? 'false' : 'true'}}
+  </button>
+</p>
+
+<p [ngClass] = "{ 'classA': condition, 'classB': !condition }">
+  Texte affiché 
+</p>
+
+<p [ngClass]="{ 'classA': condition ? 'hello' : ''}">
+  Texte affiché  
+</p>

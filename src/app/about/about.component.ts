@@ -6,7 +6,10 @@ import { Component, OnInit, ɵɵngDeclareDirective } from '@angular/core';
   styles: [
     '.class1 {color: limegreen }',
     '.class2 {font-family: "Brush Script MT"; font-size: 2rem}',
-    '.class3 {background-color: yellow}'
+    '.class3 {background-color: yellow}',
+    '.classA {color: limegreen }',
+    '.classB {color: darkred }',
+
   ]
 })
 export class AboutComponent implements OnInit {
@@ -16,6 +19,8 @@ export class AboutComponent implements OnInit {
   gods : IGod[];
   selectedGod : IGod = {name:'name', gender: 'god' };
   showGoddess : boolean = true;
+  myColor = 'LightCoral';
+  condition = false;
 
   constructor() {
     this.store = this.getData();
@@ -129,6 +134,7 @@ getGods () : IGod [] {
       class3: this.class3var,
     };
   }
+
 
 } // end of class AboutComponent
 
